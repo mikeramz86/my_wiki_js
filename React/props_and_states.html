@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <title>Eloquent Javascript</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main role="main">
+
+        <div>
+            <h1>Props and States</h2>
+            <br>
+            <br>
+            <div>
+                <h2>Props</h3>
+                    <li>Numbers: 1 2 4.5 5</li>
+                <h3>defaultProps</h3>
+                    <li>Often you want a prop to have a default value that is used if an alternative isn't supplied when rendering the component.</li>
+                    <li>This is achieved using the defaultProps attribute.</li>
+                    <li> In the Card component, if a text prop isn't provided then the component will fall back to using an empty string.</li>
+                <h3>Validating props with prop-types</h3>
+                    <li>If you need extra confirmation that you are passing the correct information to a component via its props then you can use the 
+                            <a href="https://github.com/facebook/prop-types">prop-types library.</a></li>
+                    <li>There are a wide range of different validators which cover all of the core JavaScript types; 
+                        you can see a full list of these in the <a href="https://github.com/facebook/prop-types#usage">prop-types documentation</a>.</li>
+            </div>
+            <div>
+                <h2>States</h2>
+                <li>The state is an object that is stored as part of a component and can be updated by the component itself. </li>
+                <li>only stateful components can contain state. Stateless components can only be manipulated by changing the props passed to them.</li>
+                <li>Stateful components are more powerful, but stateless components are often more reusable and simpler to reason about.</li>
+                <li>This is the fundamental trade-off between stateless and stateful components. Stateful components are more powerful, </li>
+                <li>but stateless components are often more reusable and simpler to reason about.</li>
+                <li>As a general rule, you should prefer stateless components and only create stateful components when you really need to. </li>
+            </div>
+
+        </div>
+
+        <div>
+
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+    </footer>
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>

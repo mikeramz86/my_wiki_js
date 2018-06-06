@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <title>Eloquent Javascript</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main role="main">
+
+        <div>
+            <h1>Ajax in React</h2>
+            <br>
+            <br>
+            <div>
+                <h2>Putting Ajax into a compononent</h2>
+                <li>1. Open two terminals</li>
+                <li>2. cd to both client and server</li>
+                <li>3. In each, run npm install and npm start</li>
+            </div>
+            <div>
+                <h2>The API and Cors</h2>
+                <li>we are now using <a href="https://www.npmjs.com/package/cors">CORS middleware</a></li>
+                <li>By default, web-browsers prohibit AJAX requests for resources located on a 
+                    domain other than the client app itself.</li>
+                <li> Here the client is running on <a href="http://localhost:3000/">http://localhost:3000</a>
+                    and the API is running on<a href="http://localhost:8080/">http://localhost:8080/</a></li>
+                <li>To allow clients on different domains to make requests to our API server, we need to enable
+                        cross origin resource sharing (CORS).
+                </li>
+                <li>We read the origin from an environment variable, falling back to our development default. 
+                    To deploy the application, you would set the environment variable to the location of your running app, 
+                    for example https://www.myapp.com.</li>
+            </div>
+            <div>
+                <h2>Life Cycle Methods</h2>
+                <li>Lifecycle methods solve this problem; they provide methods that are triggered at the different stages of a 
+                    React component's lifetime.  We override these methods to run our own code at a certain stage. T</li>
+                <li>Here is an <img src="/imgs/lifecyclemethodsoverride.png">  image summarizing the different lifecycle methods that you can override:</li>
+                <p>Pay special attention to the naming convention for our environment variable REACT_APP_.... 
+                    For apps created with create-react-app to have environment variables flow through the build process, 
+                    they must be prepended with REACT_APP_. If we had API_BASE_URL = process.env.API_BASE_URL || "http://localhost:8080/api"; 
+                    instead, the build version of our app would end up with config.API_BASE_URL set to the default value, 
+                    even if we ran API_BASE_URL="https://api.myapp.com/api npm run build because create-react-app would suppress the environment variable from the build. 
+                    You can read more about using custom environment variables with create-react-app <a href"https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables">here</a>.</p>
+            </div>
+
+        </div>
+
+        <div>
+
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+    </footer>
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
