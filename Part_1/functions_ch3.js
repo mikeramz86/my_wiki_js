@@ -237,3 +237,71 @@ console.log(findSolution(24));
 //=========================================
 //      GROWING FUNCTIONS
 //=========================================
+
+/*
+
+    - THERE ARE TWO MORE OR LESS NATURAL WAYS FOR FUNCTIONS TO BE INTRODUCED IN PROGRAMS
+
+    1. You find yourself writing very similar code multiple times
+        - to avoid that we:
+            1. take the repeated functionality, 
+            2. find a good name for it, 
+            3. and put it into a function
+    
+    2. You find you need some more functionality that you haven't written yet and that sounds like it deserves its own function
+        - you'll start
+            1. by naming the function
+            2. write its body
+
+*/
+
+// How difficult it is to find a good name for a function is a good indication of how clear a concept it is that you're trying to wrap
+
+//this program prints two numbers, the numbers of cows and chickens on a farm, with the word Cows and Chickens after them,
+// and zeros padded before both numbers so that they are always three digits
+
+/*
+
+007 COWS
+
+011 Chickens
+
+*/
+
+function printFarmInventory(cows, chickens) {
+    var cowString = String(cows);
+    //adding .length after string value gives us the length of that string
+    while (cowString.length < 3) {
+    //the while loop keeps adding zeros in front of the number strings until they are at least three characters long
+        cowString = "0" + cowString;
+        console.log(cowString + "Cows")
+    };
+
+    var chickenString = String(chickens);
+    while (chickenString.length < 3) {
+        chickenString= "0" + chickenString;
+        console.log(chickenString + "Chickens");
+    };
+}
+
+printFarmInventory(7,11);
+
+// so what if the farmer adds pigs when are starting to add labels to invoice the farmer
+
+//new solution
+
+function zeroPad(number, width) {
+    var string = String(number);
+    while (string.length < width) {
+        string = "0" + string;
+    }
+    return string;
+}
+
+function printFarmInventory( cows, chickens, pigs) {
+    console.log(zeroPad(cows, 3) + " Cows");
+    console.log(zeroPad(chickens, 3) + " Chickens");
+    console.log(zeroPad(pigs, 3) + " Pigs");
+}
+
+printFarmInventory(7, 16, 3);
