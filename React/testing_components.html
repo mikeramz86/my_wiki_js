@@ -29,6 +29,41 @@
                 <li> Props and state: Does what's rendered reflect the component's props and state?</li>
                 <li>Callbacks and events: Are callbacks fired when the user interacts with a component? Is the state updated correctly?</li>
             </div>
+            <div>
+                <h2>Structure of the tests</h2>
+                <p>When you run npm test, Create React App invokes a test runner called <a href="https://facebook.github.io/jest/">Jest</a></p>
+                <p>Jest is similar to mocha. Searches for tests and runs them</p>
+                <p>Jest looks for the files matching the following naming conventions</p>
+                <li>Files with .js suffix in __tests__ folders.</li>
+                <li>Files with .test.js suffix.</li>
+                <li>Files with .spec.js suffix.</li>
+
+                <h3>Test Structure</h3>
+                <li>You have a describe block, which is used to group your test cases.</li>
+                <li>The component name is used here to clearly identify which component is being tested.</li>
+                <li> Inside the describe block you have a series of it blocks.</li>
+
+                <h3>Shallow Rendering</h3>
+                <li>The shallow function uses a technique called shallow rendering.</li>
+                <li>Any child components aren't expanded, and their output cannot be inspected. 
+                    You can however look at which child components were rendered, and inspect the props passed to them</li>
+                <li>So for example, if AddForm rendered a child component called AddFormButton, our smoke test would make sure that no error was thrown within AddForm's render method, but AddFormButton could still be throwing and our test wouldn't account for this.
+                     You would need a separate smoke test for AddFormButton to make sure that the entire component rendered correctly.</li>
+
+                <h3> Full DOM rendering</h3>
+                <p> In full DOM rendering, the entire component including its children are rendered into an in-memory DOM</p>
+                <h4> If the feature you are trying to test uses any of the following features or techniques, 
+                    then you will need to use full DOM rendering rather than shallow rendering:</h4>
+                <li>Refs</li>
+                <li>Life cycle methods</li>
+                <li>Directly interacting with DOM APIs</li>
+
+                <p>Enzyme's full DOM rendering works almost identically 
+                    to its shallow rendering but uses the mount method rather than the shallow method.</p>
+                <p>The <a href="http://airbnb.io/enzyme/docs/api/mount.html">API</a> is largely identical, 
+                    aside from some small changes to accommodate differences between shallow and full DOM rendering.</p>
+            </div>
+
 
         </div>
 
