@@ -1,0 +1,12 @@
+//=========================================
+//     git rebase 
+//     (squash multiple commits into one)
+//=========================================
+
+1. `git rebase -i HEAD~"num"`
+2. `f` fix, `s` squash
+3. ESC
+4. `:x!` to save and log out
+5. `git log` (to see if commmits were squashed)
+6. `git push origin branch-name --force` (to push to repo)
+7. `git commit --ammend` ( to change commmit message)
