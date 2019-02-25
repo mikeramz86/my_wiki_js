@@ -26,13 +26,13 @@ function createLinkedList() {
     tail: null, //cyclical lists, the tail points to the head
     //length
     length: 0,
-    //push
+    //push: adds an item at the end of the array
     push(value) {
       const node = createNode(value);
 
-      if (this.head == null) {
-        this.head = node;
-        this.tail = node;
+      if (this.head === null) {
+        this.head = node
+        this.tail = node
         this.length++
         return node
       }
@@ -42,30 +42,36 @@ function createLinkedList() {
       this.length++
       return node;
     },
-    //pop
+
+
+    //pop: takes away an item at the end of the array
     pop() {
+      //scenarios: how do we pop items when our list is empty. result is returning null
       if (this.isEmpty()) {
         return null
       }
-
+      //scenarios: what if list has a length of 1
       const node = this.tail
-
+      // result: list of 1 means HEAD and TAIL are the same therefore we need to set it to null as well as our length
       if (this.head === this.tail) {
         this.head = null
         this.tail = null
+        //then decrement it
         this.length--
         return node
       }
-
+      //scenario: when our list has many items
+      //inorder to find an item you have to start from the head and continue to cal next till we find that item
       let current = this.head
       let penultimate
       while (current) {
         if (current.next === this.tail) {
           penultimate = current
+          //penultimate: means to last but one in a seires of things; second last
           break
         }
 
-        current = cuirrent.next;
+        current = current.next;
       }
 
       penultimate.next = null;
@@ -74,16 +80,18 @@ function createLinkedList() {
 
       return node
     },
+
+
     //get
     get(index) {
-      if (index < 0 || inex > this.length - 1) {
+      if (index < 0 || index > this.length - 1) {
         return null
       }
 
       if (index === 0) {
         return this.head
       }
-
+    //loop through, each item, calling next on each one 
       let current = this.head
       let i = 0;
 
@@ -93,6 +101,8 @@ function createLinkedList() {
         return current
       }
     },
+
+    
     //delete
     delete(index) {
       if (index < 0 || index > this.length - 1) {
@@ -129,16 +139,16 @@ function createLinkedList() {
 
       return deleted;
     },
-    //isEmpty
+    //isEmpty: returns whether or not the length is zero
     isEmpty() {
-      return this.length == 0
+      return this.length === 0
     },
 
     print() {
       const values = []
       let current = this.head
 
-      while(current) {
+      while (current) {
         values.push(current.value)
         current = current.next
 
@@ -149,8 +159,8 @@ function createLinkedList() {
 }
 
 const list = createLinkedList()
-const values = ['a','b','c','d','e']
-const nodes = values.map( val => list.push(val))
+const values = ['a', 'b', 'c', 'd', 'e']
+const nodes = values.map(val => list.push(val))
 
 console.log(list.isEmpty)
 console.log(list.tail)
